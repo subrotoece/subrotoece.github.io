@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subroto Kumer Deb Nath — Portfolio</title>
+  <meta name="description" content="Portfolio website of Subroto Kumer Deb Nath — Embedded/Firmware Engineer & Hardware Security Researcher." />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #111318;
+      --text: #e6e6e6;
+      --muted: #9aa4ad;
+      --brand: #7c3aed; /* violet */
+      --brand-2: #22d3ee; /* cyan */
+      --card: #151922;
+      --border: #232633;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --panel: #ffffff;
+        --text: #0d0f14;
+        --muted: #5b6773;
+        --card: #ffffff;
+        --border: #e6e8ee;
+        --shadow: 0 10px 30px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg) 0%, var(--panel) 100%);
+      color: var(--text);
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.2) blur(8px);
+      background: color-mix(in oklab, var(--panel) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+    .nav a { color: var(--muted); font-weight: 600; }
+    .nav .brand { color: var(--text); font-weight: 800; letter-spacing: .2px; }
+    .nav .links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); background: var(--card); color: var(--text); padding: 10px 14px; border-radius: 12px; box-shadow: var(--shadow); text-decoration:none; }
+    .btn:hover { transform: translateY(-1px); transition: .15s ease; text-decoration:none; }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: #fff; }
+
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 40px 0; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 6px 0 12px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; padding: 6px 10px; border-radius: 999px; border:1px solid var(--border); background: var(--card); color: var(--muted); font-weight: 600; }
+    .tag { display:inline-block; padding:6px 10px; border-radius: 999px; border:1px solid var(--border); color: var(--muted); margin: 6px 6px 0 0; }
+    .hero .cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 16px; }
+    .headshot { width: 100%; aspect-ratio: 1/1; border-radius: 24px; background: radial-gradient(120% 120% at 10% 10%, rgba(124,58,237,.25), transparent 60%), url('https://avatars.githubusercontent.com/u/9919?v=4') center/cover; border:1px solid var(--border); box-shadow: var(--shadow); }
+
+    section { margin: 36px 0; }
+    .section-title { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+
+    .grid { display:grid; gap: 16px; }
+    @media (min-width: 780px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-2 { grid-template-columns: repeat(2, 1fr);} }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 16px; box-shadow: var(--shadow); display:flex; flex-direction:column; gap:10px; }
+    .card h3 { margin: 0; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .card .meta { font-size: 14px; color: var(--muted); }
+
+    .timeline { display:grid; gap: 12px; }
+    .timeline .row { display:grid; gap: 4px; padding: 12px; border:1px solid var(--border); border-radius: 14px; background: var(--card); }
+    .timeline .row .title { font-weight: 700; }
+    .timeline .row .place { color: var(--muted); }
+
+    .footer { text-align:center; color: var(--muted); padding: 28px 0; border-top: 1px solid var(--border); }
+
+    .socials { display:flex; gap: 10px; flex-wrap: wrap; }
+
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; background: var(--panel); color: var(--muted); padding: 3px 7px; border-radius: 6px; border:1px solid var(--border); }
+
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Subroto.dev</a>
+      <nav class="links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="pill">👋 Hello! I’m Subroto</span>
+        <h1>Embedded/Firmware Engineer &<br /> Hardware Security Researcher</h1>
+        <p style="color:var(--muted); max-width: 70ch;">
+          Graduate student (M.Eng) at the University of Calgary focused on <strong>automatic asset identification in RTL</strong>, and an R&D engineer with 4+ years of experience delivering <strong>digital products</strong>, embedded systems, and firmware across STM32, AVR, PIC, RISC‑V, ESP32, and more.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:your.email@example.com">Email Me</a>
+          <a class="btn" href="resume.pdf" download>Download Resume</a>
+        </div>
+        <div style="margin-top:10px" class="socials">
+          <a class="tag" href="https://github.com/your-username">GitHub</a>
+          <a class="tag" href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
+          <a class="tag" href="https://scholar.google.com/citations?user=YOURID">Google Scholar</a>
+          <span class="tag">Calgary, Canada</span>
+        </div>
+      </div>
+      <div>
+        <div class="headshot" role="img" aria-label="Portrait placeholder"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div>
+        <span class="tag">C / Embedded C</span>
+        <span class="tag">Python</span>
+        <span class="tag">Verilog / SystemVerilog</span>
+        <span class="tag">ARM Cortex‑M</span>
+        <span class="tag">RISC‑V</span>
+        <span class="tag">STM32</span>
+        <span class="tag">AVR</span>
+        <span class="tag">PIC (PIC24F16KA101)</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">Digital Design (FPGA/ASIC)</span>
+        <span class="tag">Hardware Security</span>
+        <span class="tag">Signal Flow Analysis</span>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">CI/CD Basics</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Highlighted Projects</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Automatic Asset Identification in RTL</h3>
+          <p>Python toolkit to detect potential primary assets in Verilog/SystemVerilog using keyword and behavioral rules; supports CSV export and hierarchy traversal.</p>
+          <span class="meta">Python · Verilog · Research</span>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
+            <a class="btn" href="https://github.com/your-username/rtl-asset-detector">Repo</a>
+            <a class="btn" href="#">Demo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Signal Flow Graph for OpenTitan</h3>
+          <p>Scripts to trace inter-module connections (incl. <code>hw2reg</code>/<code>reg2hw</code>) from top to leaf for assets like <code>keymgr_key_i</code>.</p>
+          <span class="meta">Python · Graphviz</span>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
+            <a class="btn" href="https://github.com/your-username/opentitan-signal-flow">Repo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>CTMU‑Based Capacitance Meter</h3>
+          <p>Custom meter built on PIC24F16KA101 using CTMU to measure capacitance with improved accuracy over low-cost multimeters.</p>
+          <span class="meta">Embedded C · PIC24 · Hardware</span>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
+            <a class="btn" href="https://github.com/your-username/ctmu-cap-meter">Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Education</h2>
+      <div class="timeline">
+        <div class="row">
+          <div class="title">Graduate Researcher — Univ. of Calgary</div>
+          <div class="place">2023–2025 · Calgary, Canada</div>
+          <div>Thesis: <em>Automatic Asset Identification in RTL Code</em>; developed automated tools for CIA tagging, hierarchical tracing, and evaluation on open‑source IPs.</div>
+        </div>
+        <div class="row">
+          <div class="title">R&D Engineer — Walton Digi‑Tech Industries</div>
+          <div class="place">2018–2021 · Dhaka, Bangladesh & Shenzhen, China</div>
+          <div>Led cross‑functional teams delivering digital consumer products (laptops, tablets, EVM monitor). Firmware development, BIOS tooling, production optimization.</div>
+        </div>
+        <div class="row">
+          <div class="title">B.Sc. in EEE — (Your University)</div>
+          <div class="place">Year–Year · City, Country</div>
+          <div>Focus: Embedded systems, digital design, signal processing.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS / AWARDS -->
+    <section id="publications">
+      <h2 class="section-title">Publications & Awards</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Paper / Preprint Title</h3>
+          <p>Brief one‑line summary of your contribution. Add a link to the paper or poster.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#">Paper</a>
+            <a class="btn" href="#">Slides</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Awards</h3>
+          <p>Alberta Innovates Graduate Student Scholarship, Alberta Graduate Excellence Scholarship, Hack@DAC 2023 (2nd place), …</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Open to roles in embedded systems, firmware, digital hardware/RTL, and hardware security. For collaborations or opportunities, reach out!</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>
+            <strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a><br />
+            <strong>GitHub:</strong> <a href="https://github.com/your-username">github.com/your-username</a><br />
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Quick message</h3>
+          <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Hi Subroto — let's build something together!" style="width:100%; border-radius:10px; border:1px solid var(--border); background:var(--panel); color:var(--text); padding:10px;"></textarea>
+            <div style="display:flex; justify-content:flex-end; margin-top:8px;">
+              <button class="btn primary" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="y"></span> Subroto Kumer Deb Nath · Built with ❤️ and GitHub Pages
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Smooth scroll for hash links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
