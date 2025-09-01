@@ -30,28 +30,31 @@
       }
     }
 
-    @media (max-width: 640px) {
+   @media (max-width: 640px) {
   .hero {
     grid-template-columns: 1fr;   /* single column */
-    text-align: center;           /* center text */
+    text-align: center;
   }
 
-  .hero > div:first-child {
-    order: 2;                     /* put text below image (optional) */
-  }
-
+  /* Make sure the photo comes first */
   .hero > div:last-child {
-    order: 1;                     /* show image first */
+    order: -1;                    /* photo on top */
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;          /* spacing under photo */
   }
 
   .headshot,
   .headshot-img {
-    width: 70%;                   /* scale nicely on phones */
+    width: 70%;
     max-width: 280px;
     min-width: 160px;
     margin: 0 auto;
+  }
+
+  /* Text block full width under the photo */
+  .hero > div:first-child {
+    order: 0;
   }
 }
     * { box-sizing: border-box; }
