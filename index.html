@@ -3,8 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Subroto Kumer Deb Nath — Portfolio</title>
-  <meta name="description" content="Portfolio website of Subroto Kumer Deb Nath — Embedded/Firmware Engineer & Hardware Security Researcher." />
+  <title>Subroto Kumer Deb Nath — Embedded/Firmware Engineer & Hardware Security Researcher</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Official portfolio of Subroto Kumer Deb Nath — Graduate Researcher at the University of Calgary. Specialized in Embedded Systems, Firmware, RTL Design, and Hardware Security." />
+  <meta name="keywords" content="Subroto Kumer Deb Nath, Subroto Nath, Embedded Engineer, Firmware Engineer, RTL Engineer, Hardware Security Researcher, University of Calgary, Verilog, SystemVerilog, Digital Hardware, Asset Identification in RTL, Calgary Canada" />
+  <meta name="author" content="Subroto Kumer Deb Nath" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Subroto Kumer Deb Nath — Portfolio" />
+  <meta property="og:description" content="Embedded/Firmware Engineer & Hardware Security Researcher. Graduate student at the University of Calgary." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://subroto.dev" />
+  <meta property="og:image" content="https://subroto.dev/asset/hdshot.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Subroto Kumer Deb Nath — Portfolio" />
+  <meta name="twitter:description" content="Embedded/Firmware Engineer & Hardware Security Researcher | Graduate Researcher at University of Calgary" />
+  <meta name="twitter:image" content="https://subroto.dev/asset/hdshot.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Subroto Kumer Deb Nath",
+    "alternateName": "Subroto Nath",
+    "jobTitle": "Embedded/Firmware Engineer & Hardware Security Researcher",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Calgary"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Calgary"
+    },
+    "url": "https://subroto.dev",
+    "image": "https://subroto.dev/asset/hdshot.jpg",
+    "sameAs": [
+      "https://github.com/subrotoece",
+      "https://www.linkedin.com/in/subroto-nath",
+      "https://scholar.google.com/citations?user=YOURID"
+    ]
+  }
+  </script>
+
   <meta name="color-scheme" content="light dark" />
   <style>
     :root {
@@ -30,33 +74,6 @@
       }
     }
 
-   @media (max-width: 640px) {
-  .hero {
-    grid-template-columns: 1fr;   /* single column */
-    text-align: center;
-  }
-
-  /* Make sure the photo comes first */
-  .hero > div:last-child {
-    order: -1;                    /* photo on top */
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;          /* spacing under photo */
-  }
-
-  .headshot,
-  .headshot-img {
-    width: 70%;
-    max-width: 280px;
-    min-width: 160px;
-    margin: 0 auto;
-  }
-
-  /* Text block full width under the photo */
-  .hero > div:first-child {
-    order: 0;
-  }
-}
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -86,20 +103,43 @@
     .pill { display:inline-flex; align-items:center; gap:8px; padding: 6px 10px; border-radius: 999px; border:1px solid var(--border); background: var(--card); color: var(--muted); font-weight: 600; }
     .tag { display:inline-block; padding:6px 10px; border-radius: 999px; border:1px solid var(--border); color: var(--muted); margin: 6px 6px 0 0; }
     .hero .cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 16px; }
+
     .headshot {
-                width: 80%;
-                aspect-ratio: 0.8637 / 1;          /* gives the box a real height */
-                min-height: 180px;                  /* prevents collapsing on odd engines */
-                border-radius: 24px;
-                border: 1px solid var(--border);
-                box-shadow: var(--shadow);
-              
-                /* layer 1: gradient, layer 2: photo */
-                background-image: radial-gradient(120% 120% at 10% 10%, rgba(124,58,237,.25), transparent 55%), url('asset/hdshot.jpg');
-                background-size: auto, cover;       /* size per layer */
-                background-position: 0 0, center;   /* position per layer */
-                background-repeat: no-repeat, no-repeat;
-              }
+      width: 80%;
+      aspect-ratio: 0.8637 / 1;
+      min-height: 180px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background-image: radial-gradient(120% 120% at 10% 10%, rgba(124,58,237,.25), transparent 55%), url('asset/hdshot.jpg');
+      background-size: auto, cover;
+      background-position: 0 0, center;
+      background-repeat: no-repeat, no-repeat;
+    }
+
+    /* Mobile portrait responsiveness */
+    @media (max-width: 640px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 24px 0;
+      }
+      .hero > div:last-child {
+        order: -1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .hero > div:first-child {
+        order: 0;
+      }
+      .headshot {
+        width: 70%;
+        max-width: 280px;
+        min-width: 160px;
+        margin: 0 auto;
+      }
+    }
 
     section { margin: 36px 0; }
     .section-title { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
@@ -119,7 +159,7 @@
 
     .footer { text-align:center; color: var(--muted); padding: 28px 0; border-top: 1px solid var(--border); }
 
-    .socials { display:flex; gap: 10px; flex-wrap: wrap; }
+    .socials { display:flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 
     .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; background: var(--panel); color: var(--muted); padding: 3px 7px; border-radius: 6px; border:1px solid var(--border); }
 
@@ -148,7 +188,7 @@
         <span class="pill">👋 Hello! I’m Subroto</span>
         <h1>Embedded/Firmware Engineer &<br /> Digital Hardware Engineer</h1>
         <p style="color:var(--muted); max-width: 70ch;">
-          MSc in Electrical Engineering at the University of Calgary focused on <strong>automatic asset identification in RTL</strong>, and an R&D engineer with 4+ years of experience delivering <strong>digital products</strong>, embedded systems, and firmware across STM32, AVR, PIC, RISC‑V, ESP32, and more.
+          MSc in Electrical Engineering at the University of Calgary focused on <strong>automatic asset identification in RTL</strong>, and an R&D engineer with 4+ years of experience delivering <strong>digital products</strong>, embedded systems, and firmware across STM32, AVR, PIC, RISC-V, ESP32, and more.
         </p>
         <div class="cta">
           <a class="btn primary" href="#projects">View Projects</a>
@@ -174,8 +214,8 @@
         <span class="tag">C / Embedded C</span>
         <span class="tag">Python</span>
         <span class="tag">Verilog / SystemVerilog</span>
-        <span class="tag">ARM Cortex‑M</span>
-        <span class="tag">RISC‑V</span>
+        <span class="tag">ARM Cortex-M</span>
+        <span class="tag">RISC-V</span>
         <span class="tag">STM32</span>
         <span class="tag">AVR</span>
         <span class="tag">PIC (PIC24F16KA101)</span>
@@ -210,7 +250,7 @@
           </div>
         </article>
         <article class="card">
-          <h3>CTMU‑Based Capacitance Meter</h3>
+          <h3>CTMU-Based Capacitance Meter</h3>
           <p>Custom meter built on PIC24F16KA101 using CTMU to measure capacitance with improved accuracy over low-cost multimeters.</p>
           <span class="meta">Embedded C · PIC24 · Hardware</span>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
@@ -220,19 +260,19 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE & EDUCATION -->
+    <!-- EXPERIENCE -->
     <section id="experience">
       <h2 class="section-title">Experience & Education</h2>
       <div class="timeline">
         <div class="row">
           <div class="title">Graduate Researcher — Univ. of Calgary</div>
           <div class="place">2023–2025 · Calgary, Canada</div>
-          <div>Thesis: <em>Automatic Asset Identification in RTL Code</em>; developed automated tools for CIA tagging, hierarchical tracing, and evaluation on open‑source IPs.</div>
+          <div>Thesis: <em>Automatic Asset Identification in RTL Code</em>; developed automated tools for CIA tagging, hierarchical tracing, and evaluation on open-source IPs.</div>
         </div>
         <div class="row">
-          <div class="title">R&D Engineer — Walton Digi‑Tech Industries</div>
+          <div class="title">R&D Engineer — Walton Digi-Tech Industries</div>
           <div class="place">2018–2021 · Dhaka, Bangladesh & Shenzhen, China</div>
-          <div>Led cross‑functional teams delivering digital consumer products (laptops, tablets, EVM monitor). Firmware development, BIOS tooling, production optimization.</div>
+          <div>Led cross-functional teams delivering digital consumer products (laptops, tablets, EVM monitor). Firmware development, BIOS tooling, production optimization.</div>
         </div>
         <div class="row">
           <div class="title">B.Sc. in EEE — (Your University)</div>
@@ -242,13 +282,13 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS / AWARDS -->
+    <!-- PUBLICATIONS -->
     <section id="publications">
       <h2 class="section-title">Publications & Awards</h2>
       <div class="grid cols-2">
         <article class="card">
           <h3>Paper / Preprint Title</h3>
-          <p>Brief one‑line summary of your contribution. Add a link to the paper or poster.</p>
+          <p>Brief one-line summary of your contribution. Add a link to the paper or poster.</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn" href="#">Paper</a>
             <a class="btn" href="#">Slides</a>
@@ -261,13 +301,13 @@
       </div>
     </section>
 
-        <!-- Certifications -->
+    <!-- CERTIFICATIONS -->
     <section id="certification">
       <h2 class="section-title">Certifications</h2>
       <div class="grid cols-2">
         <article class="card">
           <h3>Certification on Firmware Development</h3>
-          <p>Brief one‑line summary of your contribution. Add a link to the paper or poster.</p>
+          <p>Brief one-line summary of your contribution. Add a link to the paper or poster.</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn" href="#">Paper</a>
             <a class="btn" href="#">Slides</a>
@@ -279,7 +319,6 @@
         </article>
       </div>
     </section>
-
 
     <!-- CONTACT -->
     <section id="contact">
@@ -313,9 +352,7 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Smooth scroll for hash links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href').slice(1);
